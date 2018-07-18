@@ -4,8 +4,8 @@ import BurgerIngredient from './BurgerIngredients/BurgerIngredient';
 
 const burger = (props) => {
   let ingredients = [];
-  for (let key in props.ingredient) {
-    for (let i=0; i<props.ingredient[key] ; i++) {
+  for (let key in props.ingredients) {
+    for (let i=0; i<props.ingredients[key] ; i++) {
       ingredients.push(<BurgerIngredient key={key+i} type={key} />);
     }
   }
