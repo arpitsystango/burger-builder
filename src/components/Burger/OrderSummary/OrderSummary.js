@@ -4,10 +4,10 @@ import Button from '../../UI/Button/Button';
 
 const orderSummary = (props) => {
   const ingredientSummary = [];
-  for (let key in props.ingredient) {
+  for (let key in props.ingredients) {
     ingredientSummary.push(
       <li key={key}>
-        <span style={{ textTransform: 'capitalize' }}>{key}</span>: {props.ingredient[key]}
+        <span style={{ textTransform: 'capitalize' }}>{key}</span>: {props.ingredients[key]}
       </li>
     );
   }
