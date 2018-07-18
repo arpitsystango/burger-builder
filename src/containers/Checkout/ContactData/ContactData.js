@@ -134,7 +134,7 @@ class ContactData extends Component {
   }
 
   render() {
-    console.log("[ContactData.js] Inside Render");
+    console.log("[ContactData.js] Inside render()");
     debugger
     let form = (
       <form action="">

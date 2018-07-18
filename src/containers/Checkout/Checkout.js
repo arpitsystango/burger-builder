@@ -9,8 +9,26 @@ class Checkout extends Component {
     totalPrice: 0
   }
 
+  constructor(props) {
+    super(props);
+    console.log("[Checkout.js] Inside constructor()");
+    debugger
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("[Checkout.js] Inside shouldComponentUpdate()");
+    debugger
+    return true;
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("[Checkout.js] Inside componentDidUpdate()");
+    debugger
+  }
+
   componentWillMount() {
-    console.log("[Checkout.js] Inside componentWillMount");
+    console.log("[Checkout.js] Inside componentWillMount()");
+    debugger
   }
 
   componentDidMount() {
@@ -25,6 +43,7 @@ class Checkout extends Component {
       }
     }
     console.log("[Checkout.js] Inside componentDidMount()");
+    debugger
     this.setState({ ingredients: ingredients, totalPrice: totalPrice });
   }
 
@@ -37,6 +56,7 @@ class Checkout extends Component {
   }
 
   render() {
+    console.log("[Checkout.js] Inside render()");
     return (
       <div>
         <CheckoutSummary
