@@ -64,8 +64,10 @@ class ContactData extends Component {
           options: [
             { value: 'fastest', displayValue: 'Fastest' },
             { value: 'cheapest', displayValue: 'Cheapest' }
-          ]
-        })
+          ],
+          value: 'fastest'
+        },
+        )
       }
     });
   }
@@ -107,11 +109,13 @@ class ContactData extends Component {
 
     let isFormValid = true;
     for (let key in updatedOrderForm) {
-      if (updatedOrderForm[key].validationRules && !this.state.orderForm[key].isValid) {
+      if (updatedOrderForm[key].validationRules && !updatedOrderForm[key].isValid) {
         isFormValid = false;
         break;
       }
     }
+
+    console.log(isFormValid);
 
     this.setState({ orderForm: updatedOrderForm, isFormValid });
   }
