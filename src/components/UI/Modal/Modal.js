@@ -15,7 +15,7 @@ class Modal extends Component {
   render() {
     return (
       <Aux>
-        <BackDrop show={this.props.show} clicked={this.props.closeOrdering} />
+        <BackDrop show={this.props.show} clicked={this.props.modalClosed} />
         <div
           className={classes.Modal}
           style={{
