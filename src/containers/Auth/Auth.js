@@ -7,6 +7,7 @@ import * as actions from '../../store/actions';
 import { connect } from 'react-redux';
 import axios from '../../axios-orders';
 import { Redirect } from 'react-router-dom';
+import { checkValidity } from '../../shared/utility';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
 let vaildationOptions = {
@@ -33,34 +34,13 @@ class Auth extends Component {
     };
   }
 
-  checkValidity = (value, rules) => {
-    let isValid = false;
-
-    value = value.trim();
-
-    if (rules.isRequired) {
-      isValid = value !== '';
-    }
-
-    if (rules.minLength) {
-      isValid = value.length >= rules.minLength && isValid;
-    }
-
-    if (rules.maxLength) {
-      isValid = value.length <= rules.maxLength && isValid;
-    }
-
-    return isValid;
-  }
-
-
   inputChangeHandler = (key, event) => {
     const updatedControls = {
       ...this.state.controls,
       [key]: {
         ...this.state.controls[key],
         value: event.target.value,
-        isValid: this.checkValidity(event.target.value, this.state.controls[key].validationRules),
+        isValid: checkValidity(event.target.value, this.state.controls[key].validationRules),
         touched: true
       }
     };
